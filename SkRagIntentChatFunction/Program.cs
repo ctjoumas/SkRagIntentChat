@@ -7,16 +7,15 @@
     using Azure.Search.Documents.Indexes;
     using SkRagIntentChatFunction.Services;
     using SkRagIntentChatFunction.Plugins;
-
     
-    string DeploymentName = Environment.GetEnvironmentVariable("ApiDeploymentName", EnvironmentVariableTarget.Process) ?? "";
-    string AzureOpenAiEndpoint = Environment.GetEnvironmentVariable("OpenAiEndpoint", EnvironmentVariableTarget.Process) ?? "";
-    string AzureOpenAiApiKey = Environment.GetEnvironmentVariable("OpenAiApiKey", EnvironmentVariableTarget.Process) ?? "";
-    string AzureSearchEndpoint = Environment.GetEnvironmentVariable("SearchServiceEndpoint", EnvironmentVariableTarget.Process) ?? "";
-    string AzureSearchKey = Environment.GetEnvironmentVariable("SearchServiceKey", EnvironmentVariableTarget.Process) ?? "";
-    string EmbeddingModel = Environment.GetEnvironmentVariable("EmbeddingModel", EnvironmentVariableTarget.Process) ?? "";
+    string DeploymentName = Environment.GetEnvironmentVariable("ApiDeploymentName", EnvironmentVariableTarget.Process) ?? string.Empty;
+    string AzureOpenAiEndpoint = Environment.GetEnvironmentVariable("OpenAiEndpoint", EnvironmentVariableTarget.Process) ?? string.Empty;
+    string AzureOpenAiApiKey = Environment.GetEnvironmentVariable("OpenAiApiKey", EnvironmentVariableTarget.Process) ?? string.Empty;
+    string AzureSearchEndpoint = Environment.GetEnvironmentVariable("SearchServiceEndpoint", EnvironmentVariableTarget.Process) ?? string.Empty;
+    string AzureSearchKey = Environment.GetEnvironmentVariable("SearchServiceKey", EnvironmentVariableTarget.Process) ?? string.Empty;
+    string EmbeddingModel = Environment.GetEnvironmentVariable("EmbeddingModel", EnvironmentVariableTarget.Process) ?? string.Empty;
 
-    var host = new HostBuilder()
+var host = new HostBuilder()
         .ConfigureFunctionsWebApplication()
         .ConfigureServices(services =>
         {
@@ -40,7 +39,8 @@
 
                 // Custom AzureAISearchService to configure request parameters and make a request.
                 builder.Services.AddSingleton<IAzureAISearchService, AzureAISearchService>();
-
+                builder.Services.AddTransient<IAzureAIAssistantService>(a => new AzureAIAssistantService(AzureOpenAiEndpoint, AzureOpenAiApiKey, DeploymentName));
+                
                 #pragma warning disable SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
                 builder.AddAzureOpenAITextEmbeddingGeneration(EmbeddingModel, AzureOpenAiEndpoint, AzureOpenAiApiKey);
                 #pragma warning restore SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
