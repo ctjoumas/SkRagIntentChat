@@ -1,0 +1,12 @@
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\bin\Debug\net8.0\nl2sql.library.deps.json
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\bin\Debug\net8.0\nl2sql.library.dll
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\bin\Debug\net8.0\nl2sql.library.pdb
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\Nl2Sql.Library.csproj.AssemblyReference.cache
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\Nl2Sql.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\Nl2Sql.Library.AssemblyInfoInputs.cache
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\Nl2Sql.Library.AssemblyInfo.cs
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\Nl2Sql.Library.csproj.CoreCompileInputs.cache
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\nl2sql.library.dll
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\refint\nl2sql.library.dll
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\nl2sql.library.pdb
+C:\Users\kyjohnso\source\repos\TableToYAML\nl2sql.library\obj\Debug\net8.0\ref\nl2sql.library.dll
